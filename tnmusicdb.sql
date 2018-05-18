@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 18, 2018 lúc 09:56 AM
+-- Thời gian đã tạo: Th5 18, 2018 lúc 04:14 PM
 -- Phiên bản máy phục vụ: 10.1.32-MariaDB
 -- Phiên bản PHP: 7.2.5
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `tnmusicdb`
 --
+CREATE DATABASE IF NOT EXISTS `tnmusicdb` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `tnmusicdb`;
 
 -- --------------------------------------------------------
 
