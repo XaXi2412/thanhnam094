@@ -3,6 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
+<style>
+	.dn-1{
+		color: black;
+		}
+	.dn-1:hover{
+		text-decoration: underline;
+		
+		}
+
+
+
+</style>
 <?php
 		ini_set('max_execution_time', 180);
 		ini_set('memory_limit', '-1');
@@ -222,7 +234,7 @@
 <section class="navbar">
       <div class="container">
 				<div class="navbar-header">
-  <span class="navbar-header"><a ><img src="images/1.png" alt="Tn-WaterMarkingDemo" width="177" height="67" 						/></a></span><span class="navbar-header"></div>
+  <span class="navbar-header"><a href="index.php" title="Tn-WaterMarkingDemo"><img src="images/1.png" alt="Tn-WaterMarkingDemo" width="177" height="67" 						/></a></span><span class="navbar-header"></div>
   	
   <?php
 					if (isset($_SESSION['user'])){
@@ -338,7 +350,7 @@
 					 				echo "<li>
 											<div class=\"sm2-row\">
 												<div class=\"sm2-col sm2-wide\">
-													<a href=\"http://docs.google.com/uc?export=open&id=" . $value['id'] . "&type=.wav\"><b>" . $value['singer'] . "</b> - " . $value['song'] . "<span class=\"label\">Sở hữu</span></a>
+													<a href=\"http://docs.google.com/uc?export=open&id=" . $value['id'] . "&type=.wav\"><b>" . $value['singer'] . "</b> - " . $value['song'] . "</a>
 												</div>
 												<div class=\"sm2-col\">
 													<a href=\"http://docs.google.com/uc?export=open&id=" . $value['id'] . "\" target=\"_blank\" title=\"Tải bài hát này\" ><img src=\"download.png\"></a>
@@ -385,7 +397,7 @@
 								}
 							}
 							else{
-								echo "Đăng nhập";
+								echo "<a href=\"login.php\" title=\"Mời bạn đăng nhập\" class=\"dn-1\">Đăng nhập</a>";
 							}
 							echo "	</td>
 								</tr>";
