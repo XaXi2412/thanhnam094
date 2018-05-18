@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 17, 2018 lúc 10:24 AM
+-- Thời gian đã tạo: Th5 18, 2018 lúc 09:56 AM
 -- Phiên bản máy phục vụ: 10.1.32-MariaDB
 -- Phiên bản PHP: 7.2.5
 
@@ -43,9 +43,14 @@ CREATE TABLE `multimedia` (
 --
 
 INSERT INTO `multimedia` (`id`, `parentid`, `song`, `singer`, `url`, `type`, `owner`) VALUES
+('178Fl1dL2_Bxty320f7JAhGPB8QUZkbKk', '178Fl1dL2_Bxty320f7JAhGPB8QUZkbKk', 'Test', 'Bells', 'https://drive.google.com/file/d/178Fl1dL2_Bxty320f7JAhGPB8QUZkbKk/view?usp=sharing', 'music', 'admin'),
+('17BLfVlCyaiUApvdUucffuvn4GAMAWVP2', '17BLfVlCyaiUApvdUucffuvn4GAMAWVP2', 'Hello', 'Adele', 'https://drive.google.com/file/d/17BLfVlCyaiUApvdUucffuvn4GAMAWVP2/view?usp=sharing', 'music', 'admin'),
 ('1dG_cRdsNu4QvuEnyPOJ8ls14pTPU-G9V', '1dG_cRdsNu4QvuEnyPOJ8ls14pTPU-G9V', 'Jingle Bells', 'Bells', 'https://drive.google.com/file/d/1dG_cRdsNu4QvuEnyPOJ8ls14pTPU-G9V/view?usp=sharing', 'music', 'admin'),
-('1GmHIrZeBy8v2lKbiRVEqgXP3u-_-DCC1', '1dG_cRdsNu4QvuEnyPOJ8ls14pTPU-G9V', 'Jingle Bells', 'Bells', 'https://drive.google.com/file/d/1GmHIrZeBy8v2lKbiRVEqgXP3u-_-DCC1/view?usp=sharing', 'music', 'thanhnam'),
+('1eLWe-eQTEgRU2AttGvVBSNv4mv8oryFv', '1ousakwAjnC4nEfluLtFanGxqAOEbFy5r', 'Tôi đi tìm tôi', 'Ưng Hoàng Phúc', 'https://drive.google.com/file/d/1eLWe-eQTEgRU2AttGvVBSNv4mv8oryFv/view?usp=sharing', 'music', 'thanhnam'),
 ('1iRl-A0ktulzVwsbBXTiDoMUQ9d_jXuji', '1iRl-A0ktulzVwsbBXTiDoMUQ9d_jXuji', 'Endless Love ', 'Lionel Richie', 'https://drive.google.com/file/d/1iRl-A0ktulzVwsbBXTiDoMUQ9d_jXuji/view?usp=sharing', 'music', 'admin'),
+('1m3sMvcV1R8mGl_c7ftcO-lEgl5dp5nmO', '1iRl-A0ktulzVwsbBXTiDoMUQ9d_jXuji', 'Endless Love ', 'Lionel Richie', 'https://drive.google.com/file/d/1m3sMvcV1R8mGl_c7ftcO-lEgl5dp5nmO/view?usp=sharing', 'music', 'thanhnam'),
+('1MwbNznSqEl19GtLtOr7MqTqt638mMgk4', '1MwbNznSqEl19GtLtOr7MqTqt638mMgk4', 'Về phía mưa', 'Thế Bảo', 'https://drive.google.com/file/d/1MwbNznSqEl19GtLtOr7MqTqt638mMgk4/view?usp=sharing', 'music', 'admin'),
+('1ousakwAjnC4nEfluLtFanGxqAOEbFy5r', '1ousakwAjnC4nEfluLtFanGxqAOEbFy5r', 'Tôi đi tìm tôi', 'Ưng Hoàng Phúc', 'https://drive.google.com/file/d/1ousakwAjnC4nEfluLtFanGxqAOEbFy5r/view?usp=sharing', 'music', 'admin'),
 ('1uObI3Q72ah-OSZti2g_aK3vsFMMFQf8N', '1iRl-A0ktulzVwsbBXTiDoMUQ9d_jXuji', 'Endless Love ', 'Lionel Richie', 'https://drive.google.com/file/d/1uObI3Q72ah-OSZti2g_aK3vsFMMFQf8N/view?usp=sharing', 'music', 'hello');
 
 -- --------------------------------------------------------
@@ -102,7 +107,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `password`, `permission`) VALUES
-('admin', '0acd53eb6f1423e515b15e9b16a270737679f053', 'admin'),
+('admin', '9cd656169600157ec17231dcf0613c94932efcdc', 'admin'),
 ('hello', '68eda260a14f3caa506009dff76a61871755ca30', 'user'),
 ('thanhnam', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 'user');
 

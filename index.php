@@ -338,10 +338,10 @@
 					 				echo "<li>
 											<div class=\"sm2-row\">
 												<div class=\"sm2-col sm2-wide\">
-													<a href=\"http://docs.google.com/uc?export=open&id=" . $value['id'] . "&type=.wav\"><b>" . $value['singer'] . "</b> - " . $value['song'] . "<span class=\"label\">Licenced</span></a>
+													<a href=\"http://docs.google.com/uc?export=open&id=" . $value['id'] . "&type=.wav\"><b>" . $value['singer'] . "</b> - " . $value['song'] . "<span class=\"label\">Sở hữu</span></a>
 												</div>
 												<div class=\"sm2-col\">
-													<a href=\"http://docs.google.com/uc?export=open&id=" . $value['id'] . "\" target=\"_blank\" title=\"Download this song\" class=\"sm2-icon sm2-music sm2-exclude\">Download this song</a>
+													<a href=\"http://docs.google.com/uc?export=open&id=" . $value['id'] . "\" target=\"_blank\" title=\"Tải bài hát này\" ><img src=\"download.png\"></a>
 												</div>
 											</div>
 										</li>";
@@ -360,7 +360,7 @@
 						<th class="col-xs-1" >ID</th>
 						<th class="col-xs-5" >Bài hát</th>
 						<th class="col-xs-4" >Ca sĩ</th>
-						<th class="col-xs-2" >Quyền</th>
+						<th class="col-xs-2" >Status</th>
 					</tr>
 				</thead>
 				<tbody class="songstable_scrollbar">
@@ -378,14 +378,14 @@
 								$qr->execute();
 								$rs_isLicenced = $qr->fetch();
 								if ($rs_isLicenced['id'] == ""){
-									echo "<button id=\"" . $value['id'] . "\" class=\"btn btn-danger btn-mini btnbuysong\"><i class=\"fa fa-shopping-cart\"></i></button>";
+									echo "<button id=\"" . $value['id'] . "\" class=\"btn btn-danger btn-mini btnbuysong\"><i>Mua</i></button>";
 								}
 								else{
-									echo "Licenced";
+									echo "Đã mua";
 								}
 							}
 							else{
-								echo "Please login";
+								echo "Đăng nhập";
 							}
 							echo "	</td>
 								</tr>";
@@ -394,17 +394,18 @@
 					?>
 				</tbody>
 			</table>
-
-			<form class="getsignature" action="" method="post" enctype="multipart/form-data" style="display: none;">
-                <input id="upfile-input-file" name="upfile" type="file" accept='audio/wav' style="display: none;"/>
-                <label for="upfile-input-file" class="btn btn-primary"><i class="fa fa-search"></i> Chọn từ máy tính</label>
-                <label id="upfile-file-name" style="display: none;"></label>
-                <button class="btn btn-primary" name="upfilebtn"><i class="fa fa-upload"></i> Tải lên</button>
-                <?php 
+            
+			<?php 
                 	if(isset($_POST['upfilebtn'])){
                 		echo "<div class=\"reponse-" . ($signdat!="" ? "success" : "failure") . "\">" . ($signdat!="" ? $signdat : "Hãy chọn thư mục nhạc cần xem chữ kí!") . "</div>";
         			}
         		?>
+			<form class="getsignature" action="" method="post" enctype="multipart/form-data" style="display: none;">				
+                <input id="upfile-input-file" name="upfile" type="file" accept='audio/wav' style="display: none;"/>
+                <label for="upfile-input-file" class="btn btn-primary"><i class="fa fa-search"></i> Chọn file nhạc</label>
+                <label id="upfile-file-name" style="display: none;"></label>
+                <button class="btn btn-primary" name="upfilebtn"><i class="fa fa-upload"></i> Xem chữ kí</button>
+               
 			</form>
 
 			<form class="uploadnewsong" action="" method="post" enctype="multipart/form-data" style="display: none;">
@@ -412,8 +413,9 @@
 				<input id="upfile-singer" name="upfilesinger" type="text" placeholder="Tên ca sĩ" />
                 <input id="upfile-input-file-1" name="upfile1" type="file" accept='audio/wav' style="display: none;"/>
                 <label for="upfile-input-file-1" class="btn btn-success"><i class="fa fa-search"></i> Chọn từ máy tính</label>
-                <label id="upfile-file-name-1" style="display: none;"></label>
+                
                 <button class="btn btn-success" name="upfilebtn1"><i class="fa fa-upload"></i> Tải lên</button>
+                <label id="upfile-file-name-1" style="display: none;"></label>
 			</form>
 		</div>
         
@@ -482,6 +484,8 @@
     		$('.songstable').css("display", "none");
     		$('.getsignature').css("display", "");
     		$('.uploadnewsong').css("display", "none");
+			$('.reponse-failure').css("display", "");
+			$('.reponse-success').css("display", "");
     	});
 
     	$("#upload-new-song").click(function(){
@@ -491,6 +495,8 @@
     		$('.songstable').css("display", "none");
     		$('.getsignature').css("display", "none");
     		$('.uploadnewsong').css("display", "");
+			$('.reponse-failure').css("display", "none");
+			$('.reponse-success').css("display", "none");
     	});
 
     	$(".btnbuysong").click(function(){
