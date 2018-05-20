@@ -239,7 +239,7 @@
   <?php
 					if (isset($_SESSION['user'])){
 						echo "<a id=\"fn_login\" href=\"logout.php\" title=\"Sign out\">Đăng xuất</a>";
-						echo "<p id=\"username\">Good day, " . $_SESSION['user'] . "!</p>";
+						echo "<p id=\"username\">Xin chào, " . $_SESSION['user'] . "!</p>";
 					}
 					else{ 
 						echo "<a id=\"fn_login\" href=\"login.php\" title=\"Sign in\">Đăng nhập</a>";
@@ -393,7 +393,7 @@
 									echo "<button id=\"" . $value['id'] . "\" class=\"btn btn-danger btn-mini btnbuysong\"><i>Mua</i></button>";
 								}
 								else{
-									echo "Đã mua";
+									echo "<a><img src=\"images/checked1.png\"></a>";
 								}
 							}
 							else{

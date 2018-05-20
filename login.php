@@ -512,7 +512,7 @@
 	          window.location="";
 	        }
 	        else if (response == "login failure"){
-	          alert("Oops! Something wen't wrong!");
+	          alert("Đăng nhập thất bai!Mời bạn thử lại!");
 	          window.location="";
 	        }
 	      }
@@ -551,11 +551,11 @@
 	      success : function(response){
 	      	$("*").css("cursor", "default");
 	        if (response == "signup success"){
-	          alert("Đăng nhập thành công! Chúc mừng bạn!!");
+	          alert("Đăng ký thành công! Chúc mừng bạn!!");
 	          window.location="";
 	        }
 	        else if (response == "signup failure"){
-	          alert("Xin lỗi! Mời bạn kiểm tra lại mật khẩu!");
+	          alert(" Đăng ký thất bại!");
 	          window.location="";
 	        }
 	      }
